@@ -1,0 +1,36 @@
+/* vp + header */
+
+header {
+  flex-direction: column;
+}
+
+header ul {
+  flex-direction: column;
+  text-align: center;
+}
+
+header ul li {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-bottom: 1px dotted #ddd;
+}
+
+.vp-content p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* offer */
+
+.offer {
+  padding: 5rem 1rem 5rem 1rem;
+  text-align: center;
+}
+
+.offer-list {
+  flex-direction: column;
+}
+
+.who {
+  flex-direction: column;
+}

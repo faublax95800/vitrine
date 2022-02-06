@@ -1,0 +1,160 @@
+
+
+(function () {
+    var loopaSmartEvents = window._loopaSmartEvents;
+
+    loopaSmartEvents.publisherData = {
+        pubId: '60aef422b195eb0b88e2e127',
+        siteScript: '<!-- Facebook Pixel Code -->\\n<script>\\n  if (typeof fbq === \'undefined\') {\\n    !function (f, b, e, v, n, t, s) {\\n        if (f.fbq) return; n = f.fbq = function () {\\n            n.callMethod ?\\n                n.callMethod.apply(n, arguments) : n.queue.push(arguments)\\n        };\\n        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = \'2.0\';\\n        n.queue = []; t = b.createElement(e); t.async = !0;\\n        t.src = v; s = b.getElementsByTagName(e)[0];\\n        s.parentNode.insertBefore(t, s)\\n    }(window, document, \'script\',\\n        \'https://connect.facebook.net/en_US/fbevents.js\');\\n    fbq(\'init\', \'608993176217522\');    \\n  }\\n</script>\\n<!-- End Facebook Pixel Code -->\\n\\n<!-- Taboola Pixel Code -->\\n<script type=\'text/javascript\'>\\n  window._tfa = window._tfa || [];\\n  window._tfa.push({notify: \'event\', name: \'page_view\', id: 1396433});\\n  !function (t, f, a, x) {\\n         if (!document.getElementById(x)) {\\n            t.async = 1;t.src = a;t.id=x;f.parentNode.insertBefore(t, f);\\n         }\\n  }(document.createElement(\'script\'),\\n  document.getElementsByTagName(\'script\')[0],\\n  \'//cdn.taboola.com/libtrc/unip/1396433/tfa.js\',\\n  \'tb_tfa_script\');\\n</script>\\n<!-- End of Taboola Pixel Code -->',
+        productScript: '<script>\\n  var field3 = _loopaSmartEvents.productParsingData.customField3();\\n  var field15 = _loopaSmartEvents.productParsingData.customField15();\\n  \\n  fbq(\'trackSingle\', \'608993176217522\', \'ViewContent\', {\\n    content_ids: _loopaSmartEvents.productParsingData.productId(),\\n    price: _loopaSmartEvents.productParsingData.price(),\\n    region: field3 != null || field3 != "" ? field3 : field15,\\n    country: _loopaSmartEvents.productParsingData.customField11(),\\n    content_type: [\'home_listing\', \'product\']\\n  });\\n</script>\\n\\n<!-- Segment Pixel - SM - JamesEdition - View Product - DO NOT MODIFY -->\\n<img src="https://secure.adnxs.com/seg?add=27006288&t=2" width="1" height="1" />\\n<!-- End of Segment Pixel -->',
+        conversionScript: '<script>\\n  \\n  fbq(\'trackSingle\', \'608993176217522\', \'Lead\', {\\n    enquiryType: \'[[TYPE]]\',\\n    content_ids: \'[[PRODUCT_IDS]]\',\\n    content_type: [\'home_listing\', \'product\']\\n  });   \\n  \\n    var conversionType = "[[TYPE]]";\\n    switch (conversionType) {\\n      case "contact-agent-form-fill":\\n			_tfa.push({notify: \'event\', name: \'ContactAgentFormFill\', id: 1396433});\\n        break;\\n      case "reveal-phone":        \\n			_tfa.push({notify: \'event\', name: \'PhoneRevealonagentpage\', id: 1396433});\\n        break;        \\n	  case "save-listing":\\n			_tfa.push({notify: \'event\', name: \'SaveListing\', id: 1396433});\\n        break;     \\n	  case "share-listing":\\n			_tfa.push({notify: \'event\', name: \'Share\', id: 1396433});\\n        break;         \\n      default:\\n        break;\\n    }\\n    \\n</script>\\n\\n<!-- Conversion Pixel - SM - JamesEdition - Conversion Pixel - DO NOT MODIFY -->\\n<img src="https://secure.adnxs.com/px?id=1499169&t=2" width="1" height="1" />\\n<!-- End of Conversion Pixel -->',
+        addToCartScript: '',
+        genericActionScript: '',
+        allowCookieMessage: false,
+        messageSelector: '',
+        includePostscribe: false,
+        autoTriggerOnHashChange: false,
+        enableEU: true,
+        postParsedData: false,
+        audienceSplitScript: '',
+        enableActionTracking: false
+        };
+
+        loopaSmartEvents.productParsingData = {
+        title: function() { return loopaSmartEvents.utils.getMetadataByProperty("og:title") },
+        itemUrl: function() { return loopaSmartEvents.utils.getMetadataByProperty("og:url") },
+        productId: function() { return (function () {   
+	for (var i = 0; i < window.dataLayer.length; i++) { 
+		if ('listing_id' in window.dataLayer[i]) {
+			return window.dataLayer[i].listing_id
+		}
+	} 
+})() },
+        description: function() { return loopaSmartEvents.utils.getMetadataByName("description") },
+        mainImage: function() { return loopaSmartEvents.utils.getMetadataByProperty("og:image") },
+        images: function() { return (function () {   
+	var collection = document.querySelectorAll(".je2-gallery-dialog__tabs__images img");  
+	var imageCache = [];      
+	if (collection.length > 1) {      
+		for (var i = 1; i < collection.length; i++) { 
+			var source = collection[i].src;	
+			if(source != null && source != "") {
+				imageCache.push(collection[i].src);
+			}				
+		}  
+	}
+	return imageCache;
+})() },
+        language: function() { return '' },
+        price: function() { return (function () {   
+	for (var i = 0; i < window.dataLayer.length; i++) { 
+		if ('listing_id' in window.dataLayer[i]) {
+			if('event' in window.dataLayer[i]) {
+				continue;
+			}
+			return window.dataLayer[i].listing_price;
+		}
+	} 
+})() },
+        rrp: function() { return '' },
+        brandName: function() { return '' },
+        colour: function() { return '' },
+        stock: function() { return '' },
+        category: function() { return '' },
+        subCategory: function() { return '' },
+        mpn: function() { return '' },
+        gtin: function() { return '' },
+        productType: function() { return (function () {   
+	for (var i = 0; i < window.dataLayer.length; i++) { 
+		if ('listing_id' in window.dataLayer[i]) {
+			if('event' in window.dataLayer[i]) {
+				continue;
+			}
+			return window.dataLayer[i].section;
+		}
+	} 
+})() },
+        customField1: function() { return '' },
+        customField2: function() { return '' },
+        customField3: function() { return (function () {   
+	for (var i = 0; i < window.dataLayer.length; i++) { 
+		if ('listing_id' in window.dataLayer[i]) {
+			if('event' in window.dataLayer[i]) {
+				continue;
+			}
+			return window.dataLayer[i].city
+		}
+	} 
+})() },
+        customField4: function() { return '' },
+        customField5: function() { return (function(){
+if(window.JEParams != undefined && window.JEParams!= null){ return JEParams.listingMixpanelData.Bathrooms
+}
+})(); },
+        customField6: function() { return '' },
+        customField7: function() { return '' },
+        customField8: function() { return document.querySelector(".je2-contact-form__agent .je2-contact-form__agent-avatar img") ? document.querySelector(".je2-contact-form__agent .je2-contact-form__agent-avatar img").src : "" },
+        customField9: function() { return '' },
+        customField10: function() { return '' },
+        customField11: function() { return (function () {   
+	for (var i = 0; i < window.dataLayer.length; i++) { 
+		if ('listing_id' in window.dataLayer[i]) {
+          switch(window.dataLayer[i].country){
+              case 'United States':
+              	return 'US';
+				break;
+			  case 'United Arab Emirates':
+              	return 'AE';
+				break;				
+			  case 'Switzerland':
+              	return 'CH';
+				break;				
+			  case 'Cyprus':
+              	return 'CY';
+				break;			
+			  case 'Spain':
+              	return 'ES';
+				break;			
+			  case 'France':
+              	return 'FR';
+				break;			
+			  case 'Greece':
+              	return 'GR';
+				break;			
+			  case 'Italy':
+              	return 'IT';
+				break;			
+			  case 'Portugal':
+              	return 'PT';
+				break;			
+			  default:
+				return window.dataLayer[i].country;
+				break;
+          }
+			
+		}
+	} 
+})() },
+        customField12: function() { return '' },
+        customField13: function() { return '' },
+        customField14: function() { return document.querySelector(".je2-listing-page__right-side__details__office img") ? document.querySelector(".je2-listing-page__right-side__details__office img").src : "" },
+        customField15: function() { return '' },
+        customField16: function() { return document.querySelector(".je2-contact-form__agent .je2-contact-form__agent-name") ? document.querySelector(".je2-contact-form__agent .je2-contact-form__agent-name").textContent: "" },
+        latitude: function() { return '' },
+        longitude: function() { return '' }
+        };
+
+        loopaSmartEvents.gdprSettings = {
+        mode: 'CustomScript',
+        applyRulesOutsideEu: false,
+        cookieAllowedCheckScript: function() { return true },
+        cookieDisabledCheckScript: function() { return false }
+        };
+
+        loopaSmartEvents.userData = {
+        hasCookie: true,
+        userId: '61f3dbbc051fc2cfcf8f7b30',
+        externalNetworks : [  ]
+        };
+
+        }());
