@@ -1,36 +1,91 @@
-/* vp + header */
+/*  Requête média uniquement nécessaire sur l'éditeur en ligne : */
 
-header {
-  flex-direction: column;
-}
+@media (max-width: 500px) {
+  /* class */
 
-header ul {
-  flex-direction: column;
-  text-align: center;
-}
+  .title {
+    text-align: center;
+  }
 
-header ul li {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  border-bottom: 1px dotted #ddd;
-}
+  /* vp + header */
 
-.vp-content p {
-  font-size: 1.5rem;
-  font-weight: 400;
-}
+  header {
+    flex-direction: column;
+  }
 
-/* offer */
+  header ul {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.offer {
-  padding: 5rem 1rem 5rem 1rem;
-  text-align: center;
-}
+  header ul li {
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    border-bottom: 1px dotted #ddd;
+  }
 
-.offer-list {
-  flex-direction: column;
-}
+  .vp-content h1 {
+    padding-top: 1rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
 
-.who {
-  flex-direction: column;
+  .vp-content p {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  /* offer */
+
+  .offer {
+    padding: 5rem 1rem;
+    text-align: center;
+  }
+
+  .offer-list {
+    flex-direction: column;
+  }
+
+  /* who */
+
+  .who {
+    flex-direction: column-reverse;
+  }
+
+  .who-content-img {
+    min-height: 300px;
+  }
+
+  .who-content-text {
+    padding: 4rem 2rem;
+  }
+
+  /* testimonials */
+
+  .testimonials-elem {
+    flex-direction: column;
+  }
+
+  .testimonials-elem-reverse {
+    flex-direction: column-reverse;
+  }
+
+  .testimonials-elem-profil-text {
+    text-align: center;
+  }
+
+  .testimonials-elem-profil img {
+    display: block;
+    margin: 2rem auto;
+  }
+
+  /* contact */
+
+  .contact {
+    padding: 5rem 1rem 5rem 1rem;
+  }
+
+  .contact-form button {
+    margin: 3rem auto 0 auto;
+  }
 }

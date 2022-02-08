@@ -87,6 +87,7 @@ header {
   color: #f1c40f;
   font-size: 1.5rem;
   margin-right: 0.5rem;
+  text-shadow: black 1px 0 10px;
 }
 
 .vp-logo a {
@@ -180,14 +181,13 @@ header a {
 .who {
   display: flex;
   flex-flow: row nowrap;
+  min-height: 600px;
 }
 
 .who-content-img {
   flex: 1;
-}
-
-.who-content-img img {
-  width: 100%;
+  background: url(https://dyma-images.s3.fr-par.scw.cloud/html-css/projects/project2/team.jpg)
+    center center/cover;
 }
 
 .who-content-text {
@@ -251,7 +251,7 @@ header a {
 /* contact */
 
 .contact {
-  padding: 10rem 1rem 10rem 1rem;
+  padding: 10rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -292,9 +292,11 @@ header a {
   background: green;
 }
 
+/* footer */
+
 footer {
   background: #444;
-  padding: 5rem 1rem 5rem 1rem;
+  padding: 5rem 1rem;
   color: white;
   text-align: center;
 }
